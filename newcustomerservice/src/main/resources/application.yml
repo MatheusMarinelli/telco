@@ -1,0 +1,13 @@
+server:
+  port: 9000
+
+topic:
+  customer: NEW_CUSTOMER
+
+spring:
+  kafka:
+    producer:
+      retries: 0
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
