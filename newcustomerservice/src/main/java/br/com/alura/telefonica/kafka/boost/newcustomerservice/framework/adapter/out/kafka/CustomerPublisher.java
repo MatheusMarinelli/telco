@@ -1,6 +1,7 @@
 package br.com.alura.telefonica.kafka.boost.newcustomerservice.framework.adapter.out.kafka;
 
 import br.com.alura.telefonica.kafka.boost.newcustomerservice.application.port.out.KafkaPortOut;
+import br.com.alura.telefonica.kafka.boost.newcustomerservice.domain.Customer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,10 +18,10 @@ public class CustomerPublisher implements KafkaPortOut {
     private String topic;
 
     @Autowired
-    private KafkaTemplate<String,String> template;
+    private KafkaTemplate<String, Customer> template;
 
     @Override
-    public void sendCustomerToKafka(String key, String value) {
+    public void sendCustomerToKafka(String key, Customer value) {
         template.send(topic,key,value).addCallback(new ListenableFutureCallback<>() {
             @Override
             public void onFailure(Throwable ex) {
@@ -28,7 +29,7 @@ public class CustomerPublisher implements KafkaPortOut {
             }
 
             @Override
-            public void onSuccess(SendResult<String, String> result) {
+            public void onSuccess(SendResult<String, Customer> result) {
                 log.info("MESSAGE SENT SUCCESSFULLY!");
             }
         });

@@ -1,8 +1,0 @@
-# list topics
-docker exec broker kafka-topics --bootstrap-server broker:9092 --list
-
-# create topic
-docker exec broker kafka-topics --bootstrap-server broker:9092 --create --topic <topic_name>
-
-# show topic messages
-docker exec broker kafka-console-consumer --bootstrap-server broker:9092 --topic <topic_name> --from-beginning

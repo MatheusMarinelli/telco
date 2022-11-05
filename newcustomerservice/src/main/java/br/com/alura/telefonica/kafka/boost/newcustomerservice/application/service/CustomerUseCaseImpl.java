@@ -3,7 +3,6 @@ package br.com.alura.telefonica.kafka.boost.newcustomerservice.application.servi
 import br.com.alura.telefonica.kafka.boost.newcustomerservice.application.port.in.CustomerUseCase;
 import br.com.alura.telefonica.kafka.boost.newcustomerservice.application.port.out.KafkaPortOut;
 import br.com.alura.telefonica.kafka.boost.newcustomerservice.domain.Customer;
-import br.com.alura.telefonica.kafka.boost.newcustomerservice.framework.helper.CustomerMessageBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,7 @@ public class CustomerUseCaseImpl implements CustomerUseCase {
 
     @Override
     public void createNewCustomer(Customer customer) {
-        portOut.sendCustomerToKafka(customer.getEmail(), CustomerMessageBuilder.buildMessage(customer));
+        portOut.sendCustomerToKafka(customer.getEmail(), customer);
     }
 
 }
