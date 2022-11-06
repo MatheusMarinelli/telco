@@ -30,7 +30,7 @@ public class CustomerPublisher implements KafkaPortOut {
 
             @Override
             public void onSuccess(SendResult<String, Customer> result) {
-                log.info("MESSAGE SENT SUCCESSFULLY!");
+                log.info("MESSAGE SENT SUCCESSFULLY TO PARTITION {}",result.getRecordMetadata().partition());
             }
         });
     }
