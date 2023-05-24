@@ -1,7 +1,7 @@
 package br.com.alura.telefonica.kafka.boost.newcustomerservice.framework.adapter.in.rest;
 
+import br.com.alura.telefonica.kafka.boost.common.domain.Customer;
 import br.com.alura.telefonica.kafka.boost.newcustomerservice.application.port.in.CustomerUseCase;
-import br.com.alura.telefonica.kafka.boost.newcustomerservice.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

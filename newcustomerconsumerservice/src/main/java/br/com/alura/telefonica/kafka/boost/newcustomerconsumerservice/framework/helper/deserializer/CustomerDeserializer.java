@@ -1,6 +1,6 @@
 package br.com.alura.telefonica.kafka.boost.newcustomerconsumerservice.framework.helper.deserializer;
 
-import br.com.alura.telefonica.kafka.boost.newcustomerconsumerservice.domain.Customer;
+import br.com.alura.telefonica.kafka.boost.common.domain.Customer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.serialization.Deserializer;
 

@@ -1,6 +1,6 @@
 package br.com.alura.telefonica.kafka.boost.newcustomerconsumerservice.framework.adapter.in.kafka;
 
-import br.com.alura.telefonica.kafka.boost.newcustomerconsumerservice.domain.Customer;
+import br.com.alura.telefonica.kafka.boost.common.domain.Customer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
