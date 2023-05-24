@@ -1,4 +1,4 @@
-package br.com.alura.telefonica.kafka.boost.newcustomerservice.domain;
+package br.com.alura.telefonica.kafka.boost.common.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
