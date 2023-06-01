@@ -10,4 +10,4 @@ spring:
       #retries: 0
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: br.com.alura.telefonica.kafka.boost.newcustomerservice.framework.helper.CustomerSerializer
+      value-serializer: br.com.alura.telefonica.kafka.boost.common.helper.serializer.CommonSerializer

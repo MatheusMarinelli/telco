@@ -19,10 +19,13 @@ public class CustomerPublisher implements KafkaPortOut {
 
     @Autowired
     private KafkaTemplate<String, Customer> template;
-
     @Override
     public void sendCustomerToKafka(String key, Customer value) {
-        template.send(topic,key,value).addCallback(new ListenableFutureCallback<>() {
+        template.send(topic,key,value).addCallback(getCallback());
+    }
+
+    private ListenableFutureCallback<SendResult<String, Customer>> getCallback() {
+        return new ListenableFutureCallback<>() {
             @Override
             public void onFailure(Throwable ex) {
                 log.error("ERROR TO SEND MESSAGE TO TOPIC!");
@@ -30,9 +33,9 @@ public class CustomerPublisher implements KafkaPortOut {
 
             @Override
             public void onSuccess(SendResult<String, Customer> result) {
-                log.info("MESSAGE SENT SUCCESSFULLY TO PARTITION {}",result.getRecordMetadata().partition());
+                log.info("MESSAGE SENT SUCCESSFULLY TO PARTITION {}", result.getRecordMetadata().partition());
             }
-        });
+        };
     }
 
 }
