@@ -11,7 +11,7 @@ public class CommonSerializer<T> implements Serializer<T> {
         try {
             return new ObjectMapper().writeValueAsBytes(data);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Cannote serialize object: " + e.getMessage());
         }
     }
 }
