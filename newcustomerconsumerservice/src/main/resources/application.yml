@@ -8,7 +8,8 @@ spring:
       group-id: new-customer-consumer-service
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: br.com.alura.telefonica.kafka.boost.newcustomerconsumerservice.framework.helper.deserializer.CustomerDeserializer
+      value-deserializer: br.com.alura.telefonica.kafka.boost.common.helper.deserializer.CommonDeserializer
+
 
 topic:
   customer: NEW_CUSTOMER
